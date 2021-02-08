@@ -86,5 +86,31 @@ namespace Lab4Q1
             }
             return isAscending;
         }
+
+        /// <summary>
+        /// Finds the average of every 3rd element in a given array 
+        /// starting from the first. 
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns>Returns the average as an int.</returns>
+        static int FindAverageOfThirds(int[] values)
+        {
+            int sum = 0;
+            int elementCounter = 0;
+            for (int i = 0; i < values.Length; i+=3)
+            {
+                sum += values[i];
+                elementCounter++;
+            }
+            return sum / elementCounter;
+        }
+        static double FindStandardDeviation(int[] values)
+        {
+            double sd = 0;
+            foreach (var item in collection)
+            {
+
+            }
+        }
     }
 }
