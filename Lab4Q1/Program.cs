@@ -15,10 +15,43 @@ namespace Lab4Q1
 {
     class Program
     {
+
+        static int[] testArray1 = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        static int[] testArray2 = new int[9] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+        static int[] testArray3 = new int[9] { 5, 2, 8, 2, 10, 9, 2, 5, 6 };
+        static int[] testArray4 = new int[9] { 500, 210, 456, 32, 18, 725, -1, 62, 100000 };
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            /*Console.WriteLine("-------------------------------Largest Values-----------------------------------");
+            Console.WriteLine("The largest value in array testArray{0} is {1}", 1, FindLargestValue(testArray1));
+            Console.WriteLine("The largest value in array testArray{0} is {1}", 2, FindLargestValue(testArray2));
+            Console.WriteLine("The largest value in array testArray{0} is {1}", 3, FindLargestValue(testArray3));
+            Console.WriteLine("The largest value in array testArray{0} is {1}", 4, FindLargestValue(testArray4));
+
+            Console.WriteLine();
+
+            Console.WriteLine("-------------------------------Smallest Values-----------------------------------");
+            Console.WriteLine("The smallest value in array testArray{0} is {1}", 1, FindSmallestValue(testArray1));
+            Console.WriteLine("The smallest value in array testArray{0} is {1}", 2, FindSmallestValue(testArray2));
+            Console.WriteLine("The smallest value in array testArray{0} is {1}", 3, FindSmallestValue(testArray3));
+            Console.WriteLine("The smallest value in array testArray{0} is {1}", 4, FindSmallestValue(testArray4));
+
+            Console.WriteLine();
+
+            Console.WriteLine("-------------------------------Average Values-----------------------------------");
+            Console.WriteLine("The average of each 3rd value in array testArray{0} is {1}", 1, FindAverageOfThirds(testArray1));
+            Console.WriteLine("The average of each 3rd value in array testArray{0} is {1}", 2, FindAverageOfThirds(testArray2));
+            Console.WriteLine("The average of each 3rd value in array testArray{0} is {1}", 3, FindAverageOfThirds(testArray3));
+            Console.WriteLine("The average of each 3rd value in array testArray{0} is {1}", 4, FindAverageOfThirds(testArray4));
+
+            Console.WriteLine();
+
+            Console.WriteLine("-----------------------------Is Ascending order---------------------------------");
+            Console.WriteLine("The average of each 3rd value in array testArray{0} is {1}", 1, IsAscendingOrder(testArray1));*/
         }
+    
+
 
         /// <summary>
         /// Finds the largest number in a given array
@@ -27,7 +60,7 @@ namespace Lab4Q1
         /// <returns>Returns the largest number as an Int.</returns>
         static int FindLargestValue(int[] values)
         {
-            int largestValue = 0;
+            int largestValue = values[0];
             foreach (int value in values)
             {
                 if (value > largestValue)
@@ -45,7 +78,7 @@ namespace Lab4Q1
         /// <returns>Returns the smallest number as an Int.</returns>
         static int FindSmallestValue(int[] values)
         {
-            int smallestValue = 0;
+            int smallestValue = values[0];
             foreach (int value in values)
             {
                 if (value < smallestValue)
@@ -104,13 +137,20 @@ namespace Lab4Q1
             }
             return sum / elementCounter;
         }
+
         static double FindStandardDeviation(int[] values)
         {
-            double sd = 0;
-            foreach (var item in collection)
+            double sum = 0;
+            double mean = 0;
+            double standardDeviation = 0;
+            foreach (int value in values)
             {
-
+                sum += value;
             }
+           
+            mean = sum / values.Length;
+            //standardDeviation = Math.Sqrt(sum * Math.Pow(, 2) / values.Length);
+            return standardDeviation;
         }
     }
 }
